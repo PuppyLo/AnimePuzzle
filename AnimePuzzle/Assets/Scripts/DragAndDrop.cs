@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 public class DragAndDrop : MonoBehaviour
 {   
     public int PlacedPieces = 0;
@@ -28,27 +29,35 @@ public class DragAndDrop : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            if (hit.transform.CompareTag("Puzzle"))
+            if (!EventSystem.current.IsPointerOverGameObject())
             {
-                if (!hit.transform.GetComponent<piceseScript>().InRightPosition)
+                RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+                if (hit.transform.CompareTag("Puzzle"))
                 {
-                    SelectedPiece = hit.transform.gameObject;
-                    SelectedPiece.GetComponent<piceseScript>().Selected = true;
-                    SelectedPiece.GetComponent<SortingGroup>().sortingOrder = OIL;
-                    OIL++;
+                    if (!hit.transform.GetComponent<piceseScript>().InRightPosition)
+                    {
+                        SelectedPiece = hit.transform.gameObject;
+                        SelectedPiece.GetComponent<piceseScript>().Selected = true;
+                        SelectedPiece.GetComponent<SortingGroup>().sortingOrder = OIL;
+                        OIL++;
+                    }
                 }
             }
         }
 
+
         if (Input.GetMouseButtonUp(0))
         {
-            if (SelectedPiece != null)
+            if (!EventSystem.current.IsPointerOverGameObject())
             {
-                SelectedPiece.GetComponent<piceseScript>().Selected = false;
-                SelectedPiece = null;
+                if (SelectedPiece != null)
+                {
+                    SelectedPiece.GetComponent<piceseScript>().Selected = false;
+                    SelectedPiece = null;
+                }
             }
         }
+
         if (SelectedPiece != null)
         {
             Vector3 MousePoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
