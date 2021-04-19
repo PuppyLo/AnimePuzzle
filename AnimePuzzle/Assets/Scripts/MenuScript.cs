@@ -4,24 +4,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.Advertisements;
 
 public class MenuScript : MonoBehaviour
 {
     public Button[] buttons;
     
-#if UNITY_IOS
-    private string gameId = "4085374";
-#elif UNITY_ANDROID
-    private string gameId = "4085375";
-#endif
     
     private void Start()
     {
         PlayerPrefs.SetInt("LevelOpen", PlayerPrefs.GetInt("LevelOpen", 1));
         
-        Advertisement.Initialize(gameId, true);
-        StartCoroutine(ShowBannerWhenInitialized());
+        
         
         for (int i = 0; i < buttons.Length; i++)
         {
@@ -48,16 +41,5 @@ public class MenuScript : MonoBehaviour
     
     }
 
-    IEnumerator ShowBannerWhenInitialized () {
-        while (!Advertisement.isInitialized) {
-            yield return new WaitForSeconds(0.5f);
-        }
-        
-        Advertisement.Banner.SetPosition(BannerPosition.BOTTOM_CENTER);
-        Advertisement.Banner.Show ("Banner_Android");
-        
 
-    }
-    
-    
 }
