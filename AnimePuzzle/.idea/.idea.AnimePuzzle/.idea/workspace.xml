@@ -14,13 +14,15 @@
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/menuScript_.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DragAndDrop_.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/MenuScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Plugins/Android/launcherTemplate.gradle" />
       <option value="$PROJECT_DIR$/Assets/Plugins/Android/AndroidManifest.xml" />
       <option value="$PROJECT_DIR$/Assets/Plugins/Android/baseProjectTemplate.gradle" />
       <option value="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle" />
       <option value="$PROJECT_DIR$/Assets/Scripts/HMSAds.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DragAndDrop.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/piceseScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/MenuScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qzAOsxbvpFvEtv9wZwbvK29Sf9" />

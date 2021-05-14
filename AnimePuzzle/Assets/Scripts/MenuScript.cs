@@ -9,12 +9,12 @@ public class MenuScript : MonoBehaviour
 {
     public Button[] buttons;
     
-    
     private void Start()
     {
         PlayerPrefs.SetInt("LevelOpen", PlayerPrefs.GetInt("LevelOpen", 1));
         
-        
+        Application.targetFrameRate = 120;
+
         
         for (int i = 0; i < buttons.Length; i++)
         {
@@ -32,13 +32,10 @@ public class MenuScript : MonoBehaviour
         PlayerPrefs.SetInt("Level", LevelNumber);
         SceneManager.LoadScene("Game");
     }
+    
     public void OpenLink(string URL)
     {
         Application.OpenURL(URL);
-    }
-    public void Rate_Us()
-    {
-    
     }
 
 

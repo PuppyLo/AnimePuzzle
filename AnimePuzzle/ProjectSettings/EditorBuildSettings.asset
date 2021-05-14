@@ -7,7 +7,13 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
+    guid: 969ad4dbc3b27a24d84630127fd1c94c
+  - enabled: 1
+    path: Assets/Scenes/Anime.unity
     guid: d1590adffbb70ab49b4e480d300285c1
+  - enabled: 1
+    path: Assets/Scenes/Animals.unity
+    guid: 8b6edc7e24fb9314d922da80c5c48d18
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 55a757bdeaa605e4db6701efce5864ea

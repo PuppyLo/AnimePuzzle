@@ -23,14 +23,17 @@ public class DragAndDrop : MonoBehaviour
         }
         
         PlayerPrefs.GetInt("LevelOpen", 1);
+        
+        
+        Application.targetFrameRate = 120;
     }
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            //if (!EventSystem.current.IsPointerOverGameObject())
-            
+            if (!EventSystem.current.IsPointerOverGameObject())
+            {
                 RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
                 if (hit.transform.CompareTag("Puzzle"))
                 {
@@ -41,21 +44,21 @@ public class DragAndDrop : MonoBehaviour
                         SelectedPiece.GetComponent<SortingGroup>().sortingOrder = OIL;
                         OIL++;
                     }
-                } 
-                
+                }
+            }
         }
 
 
         if (Input.GetMouseButtonUp(0))
         {
-           // if (!EventSystem.current.IsPointerOverGameObject())
-            
+            if (!EventSystem.current.IsPointerOverGameObject())
+            {
                 if (SelectedPiece != null)
                 {
                     SelectedPiece.GetComponent<piceseScript>().Selected = false;
                     SelectedPiece = null;
                 }
-            
+            }
         }
 
         if (SelectedPiece != null)
