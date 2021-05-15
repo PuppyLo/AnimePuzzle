@@ -3048,6 +3048,16 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 474585746b288a34bbd53cf65539b21c, type: 3}
   - {fileID: 21300000, guid: ee666b2b72eab4d4aa944c046252a963, type: 3}
   - {fileID: 21300000, guid: 27153f50d7c0fde45ae4cfb7c0df7d17, type: 3}
+  - {fileID: 21300000, guid: 38cf33c4d811d3e428e5b505e36f66c1, type: 3}
+  - {fileID: 21300000, guid: ccac235370eb65742bc341c13b53cf68, type: 3}
+  - {fileID: 21300000, guid: a6ecfce27a301f142b4a3ebd80997f20, type: 3}
+  - {fileID: 21300000, guid: 9acf8429d1806504988bce395154298a, type: 3}
+  - {fileID: 21300000, guid: 862151f990f82d840a647a896c4a0b3f, type: 3}
+  - {fileID: 21300000, guid: 6c0993d9143fba746828c8444f8261e0, type: 3}
+  - {fileID: 21300000, guid: f1680517bf5b74a4e8bcedfcdba7fadb, type: 3}
+  - {fileID: 21300000, guid: 800c17de20445bb44b02baf459aeef73, type: 3}
+  - {fileID: 21300000, guid: ff904006e87901b4297b2c3361b8000b, type: 3}
+  - {fileID: 21300000, guid: 690246b51052ba5448352c8afadde77b, type: 3}
   animator: {fileID: 1151195008}
 --- !u!20 &519420031
 Camera:
@@ -3113,7 +3123,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3aa5345d7c0112042b6700d7f9acca95, type: 3}
