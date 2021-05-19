@@ -15,6 +15,9 @@ public class DragAndDrop : MonoBehaviour
     public Animator animator;
     private bool isPaused;
     
+    public int puzzleCount;
+     
+     
 #if UNITY_IOS
     private string gameId = "4085374";
     string mySurfacingId = "Rewarded_iOS";
@@ -24,11 +27,15 @@ public class DragAndDrop : MonoBehaviour
 #endif
     bool testMode = true;
     
+    
+    
     void Start()
     {
-        for (int i = 0;i < 9; i++)
+        for (int i = 0; i < puzzleCount; i++)
         {
             GameObject.Find("Piece (" + i + ")").transform.Find("Puzzle").GetComponent<SpriteRenderer>().sprite = Levels[PlayerPrefs.GetInt("Level")];
+            
+            GameObject.Find("PuzzleKey").GetComponent<SpriteRenderer>().sprite = Levels[PlayerPrefs.GetInt("Level")];
         }
         
         PlayerPrefs.GetInt("LevelOpen", 1);
@@ -76,7 +83,7 @@ public class DragAndDrop : MonoBehaviour
             SelectedPiece.transform.position = new Vector3(MousePoint.x,MousePoint.y,0);
         }   
         
-        if (PlacedPieces == 9)
+        if (PlacedPieces == puzzleCount)
         {
             EndMenu.SetActive(true);
         }
@@ -91,7 +98,7 @@ public class DragAndDrop : MonoBehaviour
         }
         PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level")+1);
         PlayerPrefs.GetInt("LevelOpen", 1);
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Normal");
     }
 
     public void BacktoMenu()

@@ -20,8 +20,8 @@
       <option value="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle" />
       <option value="$PROJECT_DIR$/Assets/Scripts/HMSAds.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/piceseScript.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/MenuScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/MenuScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DragAndDrop.cs" />
     </changedPaths>
   </component>

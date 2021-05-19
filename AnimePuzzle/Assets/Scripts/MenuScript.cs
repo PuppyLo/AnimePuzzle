@@ -30,7 +30,7 @@ public class MenuScript : MonoBehaviour
     public void PlayGame(int LevelNumber)
     {
         PlayerPrefs.SetInt("Level", LevelNumber);
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Normal");
     }
     
     public void OpenLink(string URL)
