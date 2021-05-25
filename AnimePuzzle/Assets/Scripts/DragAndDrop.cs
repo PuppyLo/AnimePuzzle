@@ -31,6 +31,7 @@ public class DragAndDrop : MonoBehaviour
     
     void Start()
     {
+        PlayerPrefs.GetInt("LevelDiffuse");
         for (int i = 0; i < puzzleCount; i++)
         {
             GameObject.Find("Piece (" + i + ")").transform.Find("Puzzle").GetComponent<SpriteRenderer>().sprite = Levels[PlayerPrefs.GetInt("Level")];
@@ -98,7 +99,21 @@ public class DragAndDrop : MonoBehaviour
         }
         PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level")+1);
         PlayerPrefs.GetInt("LevelOpen", 1);
-        SceneManager.LoadScene("Normal");
+        if (PlayerPrefs.GetInt("LevelDiffuse") == 0)
+        {
+            
+            SceneManager.LoadScene("3x3");
+        }
+        else if (PlayerPrefs.GetInt("LevelDiffuse") == 1)
+        {
+            
+            SceneManager.LoadScene("6x6");
+        }
+        else if (PlayerPrefs.GetInt("LevelDiffuse") == 2)
+        {
+            
+            SceneManager.LoadScene("13x13");
+        }
     }
 
     public void BacktoMenu()
@@ -126,8 +141,8 @@ public class DragAndDrop : MonoBehaviour
         }
         else {animator.SetBool("Menu_Show", false);}
     }
-    
-    public void ShowRewardedVideo() {
+
+    private void ShowRewardedVideo() {
         // Check if UnityAds ready before calling Show method:
         if (Advertisement.IsReady(mySurfacingId)) {
             Advertisement.Show(mySurfacingId);
