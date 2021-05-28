@@ -148,6 +148,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.PuppyLo.AnimePuzzle
     Standalone: com.PuppyLo.AnimePuzzle
+    iPhone: com.PuppyLo.AnimePuzzle
   buildNumber:
     Standalone: 0
     iPhone: 0
